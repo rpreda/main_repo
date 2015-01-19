@@ -162,22 +162,6 @@ void cd_builtin(char **data)
 	else
 		ft_putstr("Invalid directory \n");
 }
-/*void env_builtin(char **data)
-{
-	pid_t pid;
-
-	pid = fork();
-	if (pid == 0)
-		execve(g);
-	int i;
-
-	i = 0;
-	while (env_data[i])
-	{
-		ft_putendl(env_data[i]);
-		i++;
-	}
-}*/
 void unsetenv_builtin(char **data)
 {
 	int poz;
@@ -229,11 +213,6 @@ int is_builtin(char **data)
 		cd_builtin(data);
 		return (1);
 	}
-	/*if (!ft_strcmp("env", data[0]))
-	{
-		env_builtin(data);
-		return (1);
-	}*/
 	if (!ft_strcmp("exit", data[0]))
 		exit(0);
 	if (!ft_strcmp("unsetenv", data[0]))
@@ -279,7 +258,6 @@ char *grab_path(char *name, char **env)
 }
 void exec_bin(char **data, char **env)
 {
-	//need to edit stuff for setenv here parse argv before execute $VAR shit
 	char *exec_path;
 	pid_t pid;
 
