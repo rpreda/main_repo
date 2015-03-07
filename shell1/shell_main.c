@@ -225,6 +225,7 @@ int is_builtin(char **data)
 		setenv_builtin(data);
 		return (1);
 	}
+	printf("Entered for env but got out\n");
 	return (0);
 }
 char *grab_path(char *name, char **env)
@@ -312,9 +313,11 @@ void got_command(char **env, char *line)
 				exec_path(data);
 		}
 		free_matrix(data);
+		printf("Env if 1\n");
 	}
 	else
 	{
+		printf("Env if 2\n");
 		if (char_count(line, 34) % 2 == 0)
 		{
 			aux = 0;
